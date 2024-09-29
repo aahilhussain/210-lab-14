@@ -1,4 +1,8 @@
 #include <iostream>
+#include <iomanip>
+using namespace std;
+
+const int W15 = 15;
 
 //color object
 class Color {
@@ -9,6 +13,7 @@ class Color {
 
 //creating print function
 public:
+    Color() : red(r), green(g), blue(b) {}
     Color(int r, int g, int b) : red(r), green(g), blue(b) {}
     void setRed(int r)              {red = r; }
     void setGreen (int g)           {green = g;}
@@ -17,7 +22,10 @@ public:
     int getGreen()                  {return green;}
     int getBlue()                   {return blue;}
     void print() {
-        std::cout << "Color(" << red << ", " << green << ", " << blue << ")\n";
+        cout << setw(W15) << "Red: " << red << endl;
+        cout << setw(W15) << "Green: " << green << endl;
+        cout << setw(W15) << "Blue: " << blue << endl;
+        cout << setw(W15) << "Color(" << red << ", " << green << ", " << blue << ")\n";
     }
 };
 
