@@ -13,11 +13,13 @@ class Color {
 
 //creating print function
 public:
-    Color() : red(r), green(g), blue(b) {}
+    Color() : red(0), green(0), blue(0) {}
     Color(int r, int g, int b) : red(r), green(g), blue(b) {}
-    void setRed(int r)              {red = r; }
-    void setGreen (int g)           {green = g;}
-    void setBlue (int b)            {blue = b;}
+    
+    // getters and setters with check for bounds on color parameters
+    void setRed(int r)              { if(r >= 0 && r <= 225) red = r; else red = 0;}
+    void setGreen (int g)           {if(g >= 0 && g <= 225) green = g; else green = 0;}
+    void setBlue (int b)            {if(b >= 0 && b <= 225) blue = b; else blue = 0;}
     int getRed()                    {return red;}
     int getGreen()                  {return green;}
     int getBlue()                   {return blue;}
@@ -32,8 +34,14 @@ public:
 //displaying print function
 int main(){
     Color color1(255, 0, 0);
-    Color color2(0,255,0);
-    Color color3(0,0,255);
+    Color color2;
+    color2.setRed(128);
+    color2.setGreen(3);
+    color2.setBlue(250);
+    Color color3;
+    color3.setRed(300); //invalid value to check if statement (should be 0)
+    color3.setGreen(-10); //invalid value to check if statement (should be 0)
+    color3.setBlue(120);
     color1.print();
     color2.print();
     color3.print();
