@@ -24,6 +24,10 @@ public:
 //displaying print function
 int main(){
     Color color1(255, 0, 0);
+    Color color2(0,255,0);
+    Color color3(0,0,255);
     color1.print();
+    color2.print();
+    color3.print();
     return 0;
 }
